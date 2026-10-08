@@ -2094,7 +2094,7 @@ function skiPlan(p){
  const common={...p,summary:'First＋采尔马特。安静小镇连住，First 可选一天自由滑雪。',stages:p.stages.map((s,i)=>i===1?{...s,detail:'小镇连住 3 晚：一天湖畔慢游，一天 First，观景或自由滑雪自选。'}:s)};
  if(mode==='none')return common;
  const d={...base,checkVersion:'optional-ski-'+mode+'-v1',title:rest?'First · 你自由滑雪，伴侣留宿休息':'First · 你自由滑雪，伴侣轻松观景',kind:'可选滑雪日',pace:'自由滑雪 1 天 · 途中休息',focus:'有经验者自由滑雪；伴侣按自己的节奏休息',
-  brochureIntro:rest?'你用一天在 First 开放雪道自由滑雪；伴侣留在 Gsteigwiler 原住宿休息。早餐后各自安排，下午还装备后直接回宿会合。':'一起前往 First，你按自身能力自由滑雪，伴侣以缆车观景、短暂拍照和室内休息为主，中午会合。需要约 5–7 小时外出，不想等待时选留宿休息。',
+  brochureIntro:rest?'你用一天在 First 开放雪道自由滑雪；伴侣留在 Gsteigwiler 原住宿休息。早餐后各自安排，下午还装备后直接回宿会合。':'一起前往 First，你按自身能力自由滑雪，伴侣以缆车观景、短暂拍照和室内休息为主，中午会合。需要约 7–9 小时外出，不想等待时选留宿休息。',
   route:rest?'你：Gsteigwiler → First → 原宿；伴侣：原宿休息':'Gsteigwiler → 村内 Firstbahn → First → 原宿',
   highlights:rest?['1 人自由滑雪','伴侣住处休息','下午回宿会合']:['1 人自由滑雪','伴侣缆车观景','午餐会合 · 可提早结束'],
   items:[
