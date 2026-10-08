@@ -363,7 +363,7 @@
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scenic-open .scenic-image,.roadbook-index nav a{transition:none}}
 @media print{.roadbook-sections,.roadbook-index,.route-outline,.hero-landscape{display:none!important}.roadbook-layout{display:block}}
 
-.ski-option{margin:22px 0;padding:24px;background:#eef1e7;border-left:3px solid #526b50}.ski-option h4{font-family:Georgia,"Songti SC",serif;font-size:25px;margin:5px 0 10px;color:#344e40}.ski-option p{font-size:13px;line-height:1.8;margin:8px 0}.ski-select-label{display:grid;gap:7px;font-size:12px;font-weight:650;margin:16px 0}.ski-select-label select{box-sizing:border-box;width:100%;min-height:46px;border:1px solid #b9c5b5;border-radius:3px;background:#fffdf8;color:#344e40;padding:10px 30px 10px 12px;font:inherit;font-size:13px}.ski-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 0;border-top:1px solid #cfd7c9;border-bottom:1px solid #cfd7c9;font-size:14px;line-height:1.9}.ski-comparison strong,.ski-comparison small{display:block}.ski-comparison strong{font-size:12px}.ski-comparison small,.ski-option>small{font-size:11px;color:#637061;line-height:1.7}.ski-current{color:#345241}.ski-budget-control{border-bottom:1px solid #d8dbd1;margin-bottom:20px;padding-bottom:8px}.ski-budget-control .ski-select-label{max-width:560px}@media(max-width:600px){.ski-option{padding:18px 15px}.ski-comparison{grid-template-columns:1fr;gap:10px}.ski-option h4{font-size:23px}}
+.ski-option{margin:22px 0;padding:24px;background:#eef1e7;border-left:3px solid #526b50}.ski-option h4{font-family:Georgia,"Songti SC",serif;font-size:25px;margin:5px 0 10px;color:#344e40}.ski-option p{font-size:13px;line-height:1.8;margin:8px 0}.ski-select-label{display:grid;gap:7px;font-size:12px;font-weight:650;margin:16px 0}.ski-select-label select{box-sizing:border-box;width:100%;min-height:46px;border:1px solid #b9c5b5;border-radius:3px;background:#fffdf8;color:#344e40;padding:10px 30px 10px 12px;font:inherit;font-size:13px}.ski-comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:14px 0;border-top:1px solid #cfd7c9;border-bottom:1px solid #cfd7c9;font-size:14px;line-height:1.9}.ski-comparison strong,.ski-comparison small{display:block}.ski-comparison strong{font-size:12px}.ski-comparison small,.ski-option>small{font-size:11px;color:#637061;line-height:1.7}.ski-current{color:#345241}.ski-budget-control{border-bottom:1px solid #d8dbd1;margin-bottom:20px;padding-bottom:8px}.ski-budget-control .ski-select-label{max-width:560px}@media(max-width:600px){.ski-option{padding:18px 15px}.ski-comparison{grid-template-columns:1fr;gap:10px}.ski-option h4{font-size:23px}}
 
 </style>
 </head>
@@ -489,6 +489,16 @@ const BUDGET_DATA={
       "First 冬季观光通票参考",
       "https://www.jungfrau.ch/en-gb/jungfrau-ski-region/jungfrau-region-hiking-sledging-pass/",
       "2026/27 冬季步行与雪橇日票 CHF61／64，周末及旺季用较高价；按覆盖范围与所持优惠卡比较，不与 First 单独票重复买。此票用于步行观光，不是滑雪票。"
+    ],
+    "bodmi": [
+      "Bodmi 成人初学区与设施 · 2026-10-08 核对",
+      "https://www.outdoor.ch/en/bodmi-arena-grindelwald",
+      "官方列有成人初学区；拖牵半日票 CHF23，但不等于零基础练习区通票。散客可用区域、魔毯滑雪权限与出行日票价需确认；本页另预留 CHF25／人，不当作确认报价。停车有限，村内 122／124 路巴士约 15 分钟可达。"
+    ],
+    "bodmi-rental": [
+      "Bodmi／格林德瓦德租具官方入口",
+      "https://www.outdoor.ch/en/outdoor-ski-school/ski-rental-in-interlaken-und-grindelwald",
+      "可选择 Bodmi Arena 门店，地址 Terrassenweg 104。按所选日期、门店和装备组合核对；两人体验仍按每人 CHF80 预留，不因只滑 1–2 小时假定半价。"
     ],
     "ski-pass": [
       "2026/27 滑雪日票 · 2026-10-08 核对",
@@ -1038,7 +1048,51 @@ const BUDGET_DATA={
           "source": "ski-pass",
           "kind": "reference",
           "ticket": true,
-          "skiOnly": true
+          "skiOnly": true,
+          "skiModes": [
+            "rest",
+            "view"
+          ]
+        },
+        {
+          "id": "ski-bodmi",
+          "category": "景点与登山",
+          "name": "Bodmi 练习区适用票预留 · 待确认",
+          "currency": "CHF",
+          "amount": 25,
+          "quantity": 2,
+          "days": [
+            5
+          ],
+          "unit": "成人／本次",
+          "note": "仅为散客适用区域与票种预留，不是已确认的入场票。官方 CHF23 拖牵半日票不保证适合零基础；先确认可用平缓区／魔毯，不能使用时取消体验，不改上普通雪道。",
+          "source": "bodmi",
+          "kind": "estimate",
+          "ticket": true,
+          "skiOnly": true,
+          "skiModes": [
+            "pair"
+          ]
+        },
+        {
+          "id": "ski-bus",
+          "category": "火车与游船",
+          "name": "格林德瓦德村内 ↔ Bodmi 巴士预留",
+          "currency": "CHF",
+          "amount": 10,
+          "quantity": 2,
+          "days": [
+            5
+          ],
+          "unit": "成人／往返",
+          "note": "停车有限时改乘 122／124 路，单程约 15 分钟；CHF10 为往返预算，非官方票价。若住宿客卡适用、已有覆盖车票或直接停车到场，核对后设为 0。",
+          "source": "bodmi",
+          "kind": "estimate",
+          "ticket": true,
+          "skiOnly": true,
+          "skiModes": [
+            "pair"
+          ]
         },
         {
           "id": "ski-rental",
@@ -1886,8 +1940,8 @@ function alternativeBounds(local,day){
  const xy=DAYS[day-1].points.map(k=>PLACES[k].xy),xs=xy.map(x=>x[0]),ys=xy.map(x=>x[1]);const dx=Math.max(.35,Math.max(...xs)-Math.min(...xs)),dy=Math.max(.28,Math.max(...ys)-Math.min(...ys));const cx=(Math.max(...xs)+Math.min(...xs))/2,cy=(Math.max(...ys)+Math.min(...ys))/2;return[cx-dx*.9,cy-dy*.85,cx+dx*.9,cy+dy*.85];
 }
 function alternativeRoutes(north,transfer){
- const r=(names,days,cl='')=>({names,days,cl}),inbound=[...north,...transfer.slice(1)];
- if(state.plan==='winter')return [r([...inbound,'gsteigwiler'],[3]),r(['gsteigwiler','spiez'],[4]),r(['gsteigwiler','grindelwald'],[5]),r(['grindelwald','first'],[5],'mountain'),r(['gsteigwiler','spiez','kandersteg'],[6]),r(['kandersteg','goppenstein'],[6],'mountain'),r(['goppenstein','visp','randa'],[6]),r(['randa','tasch','zermatt','gornergrat'],[7],'mountain'),r(['randa','visp','brig'],[8],'return'),r(['brig','iselle'],[8],'mountain'),r(['iselle','domodossola',[8.46,45.93],[8.64,45.76],[8.81,45.59],'como'],[8],'return'),r(['como','mxp'],[9],'return')];
+ const r=(names,days,cl='')=>({names,days,cl}),inbound=[...north,...transfer.slice(1)],pair=skiMode()==='pair';
+ if(state.plan==='winter')return [r([...inbound,'gsteigwiler'],[3]),...(pair?[r(['gsteigwiler','grindelwald'],[4,5]),r(['grindelwald','first'],[4],'mountain')]:[r(['gsteigwiler','spiez'],[4]),r(['gsteigwiler','grindelwald'],[5]),r(['grindelwald','first'],[5],'mountain')]),r(['gsteigwiler','spiez','kandersteg'],[6]),r(['kandersteg','goppenstein'],[6],'mountain'),r(['goppenstein','visp','randa'],[6]),r(['randa','tasch','zermatt','gornergrat'],[7],'mountain'),r(['randa','visp','brig'],[8],'return'),r(['brig','iselle'],[8],'mountain'),r(['iselle','domodossola',[8.46,45.93],[8.64,45.76],[8.81,45.59],'como'],[8],'return'),r(['como','mxp'],[9],'return')];
  return [r([...inbound,'leissigen'],[3]),r(['leissigen','spiez','thun'],[4]),r(['leissigen','interlaken','lauterbrunnen','grindelwald'],[5]),r(['grindelwald','first'],[6],'mountain'),r(['grindelwald','lauterbrunnen'],[7]),r(['lauterbrunnen','wengen'],[7],'mountain'),r(['grindelwald','interlaken',...transfer.slice(0,-1).reverse(),...north.slice(1,-1).reverse()],[8],'return'),r(['como','mxp'],[9],'return')];
 }
 Object.assign(PLACES,{
@@ -1989,7 +2043,7 @@ function budgetNumber(v,fallback,min=0,max=1000000){const n=Number(v);return v!=
 function normalizeBudget(raw={}){
  if(!raw||typeof raw!=='object')raw={};
  const d=BUDGET_DATA.defaults,b={version:1,flight:budgetNumber(raw.flight,d.flight),EUR:budgetNumber(raw.EUR,d.EUR,.01,100),CHF:budgetNumber(raw.CHF,d.CHF,.01,100),rentalDays:Math.round(budgetNumber(raw.rentalDays,d.rentalDays,1,10)),reserve:budgetNumber(raw.reserve,d.reserve,0,50),plans:{}};
- for(const id of ['winter','summer']){const old=raw.plans?.[id]||{};b.plans[id]={halfFare:old.halfFare===true,ski:id==='winter'&&['rest','view'].includes(old.ski)?old.ski:'none',amounts:{},selected:{}};
+ for(const id of ['winter','summer']){const old=raw.plans?.[id]||{};b.plans[id]={halfFare:old.halfFare===true,ski:id==='winter'&&['rest','view','pair'].includes(old.ski)?old.ski:'none',amounts:{},selected:{}};
   for(const r of BUDGET_DATA.plans[id].rows){if(Object.hasOwn(old.amounts||{},r.id))b.plans[id].amounts[r.id]=budgetNumber(old.amounts[r.id],r.amount);if(typeof old.selected?.[r.id]==='boolean')b.plans[id].selected[r.id]=old.selected[r.id];}
  }
  return b;
@@ -1998,10 +2052,12 @@ state.budget=normalizeBudget(state.budget);
 function budgetModel(planId,b=state.budget){
  const plan=BUDGET_DATA.plans[planId],p=b.plans[planId],fx={CNY:1,EUR:b.EUR,CHF:b.CHF};
  const rows=plan.rows.map(r=>{
-  const amount=r.id==='flight'?b.flight:(p.amounts[r.id]??r.amount),quantity=planId==='winter'&&r.id==='first'?({none:2,rest:0,view:1}[p.ski||'none']):(r.rental?b.rentalDays:r.quantity);
-  const active=r.skiOnly?(planId==='winter'&&p.ski!=='none'):(planId==='winter'&&r.id==='first'?quantity>0:(p.selected[r.id]??!r.optional));
+  const pair=planId==='winter'&&p.ski==='pair';
+  const amount=r.id==='flight'?b.flight:(p.amounts[r.id]??r.amount),quantity=planId==='winter'&&r.id==='first'?({none:2,rest:0,view:1,pair:2}[p.ski||'none']):pair&&['ski-rental','ski-cover'].includes(r.id)?2:(r.rental?b.rentalDays:r.quantity);
+  const active=r.skiOnly?(planId==='winter'&&p.ski!=='none'&&(!r.skiModes||r.skiModes.includes(p.ski))):(planId==='winter'&&r.id==='first'?quantity>0:(p.selected[r.id]??!r.optional));
+  const days=pair?({first:[4],'food-cook':[3,5,6],'food-out':[4,7]}[r.id]||r.days):r.days;
   const factor=p.halfFare&&r.half?0.5:1,unitAmount=amount*factor;
-  return {...r,managed:r.skiOnly||planId==='winter'&&r.id==='first',originalAmount:r.amount,amount,quantity,active,factor,unitAmount,cents:active?Math.round(unitAmount*quantity*fx[r.currency]*100):0};
+  return {...r,days,source:pair&&r.id==='ski-rental'?'bodmi-rental':r.source,managed:r.skiOnly||planId==='winter'&&r.id==='first',originalAmount:r.amount,amount,quantity,active,factor,unitAmount,cents:active?Math.round(unitAmount*quantity*fx[r.currency]*100):0};
  });
  if(p.halfFare)rows.push({id:'half-card',category:'火车与游船',name:'Swiss Half Fare Card · 两人各一张',currency:'CHF',amount:150,unitAmount:150,quantity:2,days:[],unit:'成人／1 个月',note:'已计卡费；只有标注可半价的个人车船与登山票折算 50%，预约费和运车火车不打折。估算票的优惠金额仍为估算。',source:'half',kind:'reference',active:true,factor:1,cents:Math.round(300*b.CHF*100)});
  const categories=Object.fromEntries(BUDGET_CATEGORIES.map(k=>[k,0])),days=Array.from({length:10},(_,i)=>({id:i+1,cents:0,rows:[],categories:Object.fromEntries(BUDGET_CATEGORIES.map(k=>[k,0]))}));
@@ -2019,7 +2075,7 @@ function originalMoney(cur,n){return (cur==='EUR'?'€':cur==='CHF'?'CHF ':'¥')
 function budgetSource(r){const src=BUDGET_DATA.sources[r.source];return src?`<a href="${esc(src[1])}" target="_blank" rel="noopener noreferrer">${r.kind==='reference'?'官方参考':'核对入口'} ↗</a>`:'';}
 function priceStatus(r){return r.originalAmount!==undefined&&r.amount!==r.originalAmount?'自填预算':r.kind==='reference'?'官方参考价':r.kind==='user'?'你的预算':'预算估算';}
 function rowPriceEditor(r){if(r.id==='flight')return originalMoney(r.currency,r.amount);return `<label class="budget-price-input"><span>${r.currency==='EUR'?'€':r.currency==='CHF'?'CHF':'¥'}</span><input type="number" min="0" max="1000000" step="0.01" value="${r.amount}" data-budget-price="${r.id}" aria-label="${esc(r.name)} 单价，${r.currency}"></label>`;}
-function budgetTicketRows(m,print=false){return m.rows.filter(r=>r.ticket&&(!r.skiOnly||r.active)).map(r=>`<tr class="${r.active?'':'budget-excluded'}"><td>${print?(r.active?'计入':'未计入'):r.managed?`<span class="budget-tag">${r.active?'随 D5 安排':'无需购买'}</span>`:`<label class="budget-check"><input type="checkbox" data-budget-selected="${r.id}" ${r.active?'checked':''} aria-label="计入 ${esc(r.name)}"><span>${r.optional?'可选':'计入'}</span></label>`}</td><td><strong>${esc(r.name)}</strong><small>D${r.days[0]} · ${priceStatus(r)}${r.half?' · 可按半价卡试算':''}</small><p>${esc(r.note)}</p>${budgetSource(r)}</td><td>${print?originalMoney(r.currency,r.amount):rowPriceEditor(r)}<small>／${esc(r.unit)}</small></td><td>${r.quantity} ${r.unit.startsWith('车')?'车':r.unit.startsWith('套')?'套':'人'}<small>${r.factor<1?'按 50% 试算':'全价'}</small></td><td><strong>${r.active?yuan(r.cents):'未计入'}</strong>${!r.active&&!r.managed?`<small>选择后约 ${yuan(Math.round(r.unitAmount*r.quantity*(r.currency==='CNY'?1:state.budget[r.currency])*100))}</small>`:''}</td></tr>`).join('');}
+function budgetTicketRows(m,print=false){return m.rows.filter(r=>r.ticket&&(!r.skiOnly||r.active)).map(r=>`<tr class="${r.active?'':'budget-excluded'}"><td>${print?(r.active?'计入':'未计入'):r.managed?`<span class="budget-tag">${r.active?'随所选安排':'无需购买'}</span>`:`<label class="budget-check"><input type="checkbox" data-budget-selected="${r.id}" ${r.active?'checked':''} aria-label="计入 ${esc(r.name)}"><span>${r.optional?'可选':'计入'}</span></label>`}</td><td><strong>${esc(r.name)}</strong><small>D${r.days[0]} · ${priceStatus(r)}${r.half?' · 可按半价卡试算':''}</small><p>${esc(r.note)}</p>${budgetSource(r)}</td><td>${print?originalMoney(r.currency,r.amount):rowPriceEditor(r)}<small>／${esc(r.unit)}</small></td><td>${r.quantity} ${r.unit.startsWith('车')?'车':r.unit.startsWith('套')?'套':'人'}<small>${r.factor<1?'按 50% 试算':'全价'}</small></td><td><strong>${r.active?yuan(r.cents):'未计入'}</strong>${!r.active&&!r.managed?`<small>选择后约 ${yuan(Math.round(r.unitAmount*r.quantity*(r.currency==='CNY'?1:state.budget[r.currency])*100))}</small>`:''}</td></tr>`).join('');}
 function dailyBudgetTable(m){return `<div class="budget-table-wrap"><table class="budget-daily-table"><caption>两人每日费用 · 不含另列的全程费用和预备金</caption><thead><tr><th>日期／主线</th><th>住宿</th><th>餐饮</th><th>用车道路</th><th>车船＋景点</th><th>其他</th><th>两人合计</th></tr></thead><tbody>${m.days.map(d=>`<tr><td><strong>D${d.id}</strong><small>${esc((m.planId===state.plan?activePlan():PLANS.find(p=>p.id===m.planId)).labels[d.id-1])}</small></td><td>${yuan(d.categories['住宿'])}</td><td>${yuan(d.categories['餐饮'])}</td><td>${yuan(d.categories['租车与道路'])}</td><td>${yuan(d.categories['火车与游船']+d.categories['景点与登山'])}</td><td>${yuan(d.categories['其他'])}</td><td><strong>${yuan(d.cents)}</strong></td></tr>`).join('')}</tbody><tfoot><tr><td colspan="6">D1–D10 小计</td><td>${yuan(m.subtotal-m.fixed)}</td></tr><tr><td colspan="6">全程费用（机票、保险、通信、香港交通、所选半价卡／签证）</td><td>${yuan(m.fixed)}</td></tr><tr><td colspan="6">预备金 · 非机票费用的 ${state.budget.reserve}%</td><td>${yuan(m.reserve)}</td></tr><tr><td colspan="6"><strong>两人总计划</strong></td><td><strong>${yuan(m.total)}</strong></td></tr></tfoot></table></div>`;}
 function budgetBreakdown(m){return BUDGET_CATEGORIES.map((k,i)=>`<div class="budget-category"><span><i style="background:${BUDGET_COLORS[i]}"></i>${k}</span><strong>${yuan(m.categories[k])}</strong></div>`).join('');}
 function renderBudget(){
@@ -2037,7 +2093,7 @@ function renderBudget(){
  <div class="budget-settings"><label>往返机票／人 · 人民币<input type="number" min="0" max="1000000" step="100" value="${b.flight}" data-budget-setting="flight"></label><label>1 欧元折合人民币<input type="number" min="0.01" max="100" step="0.01" value="${b.EUR}" data-budget-setting="EUR"></label><label>1 瑞郎折合人民币<input type="number" min="0.01" max="100" step="0.01" value="${b.CHF}" data-budget-setting="CHF"></label><label>租车计费天数<input type="number" min="1" max="10" step="1" value="${b.rentalDays}" data-budget-setting="rentalDays"></label><label>非机票预备金 · %<input type="number" min="0" max="50" step="1" value="${b.reserve}" data-budget-setting="reserve"></label></div>
  <p class="budget-small">汇率是手动预算汇率，非实时银行牌价；出发日期变化不会自动抓取新报价。租车总额摊入 D3–D9 共 7 个用车日，计费天数由实际取还时刻决定。金额按人民币四舍五入展示。</p>
  <div class="budget-pass"><label><input type="checkbox" data-budget-option="halfFare" ${p.halfFare?'checked':''}> 两人各买一张 Swiss Half Fare Card（CHF150／人）</label><p>当前已选线路：不买卡 ${yuan(without.subtotal)}；含两张卡 ${yuan(withCard.subtotal)}（均未加预备金）。<strong>${saving>0?'买卡预计省 '+yuan(saving):saving<0?'买卡反而多花 '+yuan(-saving):'两者预算相同'}</strong>。估算票价下的比较，出票前复核折扣；不默认购买 Swiss Travel Pass。</p>${budgetSource({source:'half',kind:'reference'})}</div>
- <h3>景点门票、登山交通与火车票</h3><p class="budget-small">原币单价为一位成人或一辆车；数量另列。勾选仅改变预算，不会自动重排行程。山上交通和包含的景点不重复收费。D5 的观光票人数与滑雪项目由上方安排自动决定。</p><div class="budget-table-wrap"><table class="budget-tickets">${ticketHeads}<tbody>${budgetTicketRows(m)}</tbody></table></div>
+ <h3>景点门票、登山交通与火车票</h3><p class="budget-small">原币单价为一位成人或一辆车；数量另列。勾选仅改变预算，不会自动重排行程。山上交通和包含的景点不重复收费。观光票人数、使用日与滑雪项目由上方安排自动决定。</p><div class="budget-table-wrap"><table class="budget-tickets">${ticketHeads}<tbody>${budgetTicketRows(m)}</tbody></table></div>
  <p class="budget-small">冬线包含两次运车火车，已按“每车含乘客”计入；夏线用公路往返，不计运车火车。湖岸、村庄、瀑布外观与普通公共步道的免费项目也标在各天费用中。First 飞行、山地车等额外体验不计入。</p>
  <h3>每日费用与总账</h3><p class="budget-small">住宿按当晚、餐食按食用日、共用车费按使用日分摊；这不是付款日现金流。当天小计＋全程费用＋预备金＝总计划，机票只算一次。</p>${dailyBudgetTable(m)}
  <details id="budgetLineEditor" class="budget-line-editor"><summary>修改住宿、租车、餐饮等单价 <span>已有报价时，在这里替换估算</span></summary><div class="budget-table-wrap"><table class="budget-tickets"><thead><tr><th>计入</th><th>费用与口径</th><th>原币单价</th><th>数量</th><th>两人金额</th></tr></thead><tbody>${m.rows.filter(r=>!r.ticket&&r.id!=='half-card'&&r.id!=='flight'&&(!r.skiOnly||r.active)).map(r=>`<tr class="${r.active?'':'budget-excluded'}"><td>${r.optional?`<input type="checkbox" data-budget-selected="${r.id}" ${r.active?'checked':''} aria-label="计入 ${esc(r.name)}">`:'已计入'}</td><td><strong>${esc(r.name)}</strong><small>${r.category} · ${priceStatus(r)}</small><p>${esc(r.note)}</p>${budgetSource(r)}</td><td>${rowPriceEditor(r)}<small>／${esc(r.unit)}</small></td><td>${r.quantity}</td><td><strong>${r.active?yuan(r.cents):'未计入'}</strong></td></tr>`).join('')}</tbody></table></div></details>
@@ -2047,7 +2103,7 @@ function renderBudget(){
  for(const id of openDetails){const el=$(id);if(el)el.open=true;}
 }
 function dayBudgetHTML(d,print=false){
- const m=budgetModel(state.plan),day=m.days[d.id-1],free=BUDGET_DATA.plans[state.plan].free[d.id];
+ const m=budgetModel(state.plan),day=m.days[d.id-1],free=d.budgetFree||BUDGET_DATA.plans[state.plan].free[d.id];
  const breakdown=Object.entries(day.categories).filter(([k,v])=>v>0).map(([k,v])=>`${k} ${yuan(v)}`).join(' · ');
  if(print)return `<h3>当日费用 · 两人 ${yuan(day.cents)}</h3><p>${esc(breakdown||'无新增欧洲日常费用')}。机票等全程费用与预备金另见总预算。</p><p>${esc(free)}</p>`;
  return `<section class="day-budget" aria-label="第 ${d.id} 天费用"><div class="day-budget-heading"><span>当天费用 · 两人</span><strong>${yuan(day.cents)}</strong><small>约 ${yuan(day.cents/2)}／人</small></div><p>${esc(breakdown||'无新增欧洲日常费用')}</p><details><summary>展开费用构成与免费项目</summary><ul>${day.rows.map(r=>`<li><span>${esc(r.name)}${r.days.length>1?'（分摊）':''}</span><b>${yuan(r.allocated)}</b></li>`).join('')}</ul><p>${esc(free)}</p><p>机票等全程费用与预备金另列；此处不重复分摊。已取消的预算项目仍可能出现在原行程介绍中。</p><button type="button" data-show-budget>查看／调整总预算 ↗</button></details></section>`;
@@ -2086,11 +2142,51 @@ document.addEventListener('click',e=>{
  if(day){document.querySelectorAll('[data-roadbook-day]').forEach(a=>a.removeAttribute('aria-current'));day.setAttribute('aria-current','location');}
 });
 
-const SKI_LABELS={none:'两人 First 观景（默认）',rest:'我滑雪 1 天 · 伴侣住处休息',view:'我滑雪 1 天 · 伴侣缆车观景'};
+const SKI_LABELS={none:'两人 First 观景（默认）',pair:'两人 Bodmi 短时滑雪 · 不请私教',rest:'我滑雪 1 天 · 伴侣住处休息',view:'我滑雪 1 天 · 伴侣缆车观景'};
 function skiMode(){return state.plan==='winter'?(state.budget?.plans.winter.ski||'none'):'none';}
+function pairSkiPlan(p){
+ const lake=p.days[3],first=p.days[4];
+ const d4={...first,id:4,checkVersion:'pair-first-v1',stay:lake.stay,
+  title:'First · 两人轻松观景',pace:'短步行 · 多休息',
+  intro:'把 First 留在独立的观景日。两人乘缆车看雪山，按体力短暂拍照；次日才去村内 Bodmi 体验滑雪。此方案替换原来的施皮茨湖畔日。',
+  brochureIntro:'一起乘 First 缆车看雪山，开放时短走 Cliff Walk，随时回餐厅休息。今天不滑雪，下午提早下山，为明早体验留体力。',
+  items:[['上午','村内停车 · 乘 First 缆车','从 Gsteigwiler 开车至格林德瓦德村内 Firstbahn，确认运行后乘缆车上山。前一天刚完成长途转场，不必抢首班。'],['中午','山景与午餐','围绕缆车站观景，开放且有体力时短走 Cliff Walk；餐厅正常消费休息，不安排长距离雪地步行。'],['下午稍早','缆车下山 · 村内稍作停留','不徒步下山。若次日确定滑雪，可顺路核对租具门店、Bodmi 散客练习区与适用票种，雪靴试穿留足时间。'],['傍晚前','就近吃饭 · 回原宿','把当地风味餐调整至今天，按营业时间就近用餐；疲倦时直接返宿。今晚早休息。']],
+  backup:[['两日天气有别','First 与 Bodmi 整日对调','先确认缆车、练习区、票券与租具可调整。页面按 D4 观景、D5 滑雪记账；实地对调不增加第二次 First 费用。'],['风大停运或体力不足','取消上山，村内休息','不为了补行程再加另一座山。已购票是否退改按条款处理。']],
+  book:'First 观光往返按两人购买一次，预算记在 D4；Bodmi 是次日独立项目。先看天气与运营再购票。',
+  budgetFree:'First Cliff Walk 开放时不另列门票；本日只计两人 First 观光缆车，不含滑雪。',
+  dinner:{...first.dinner,tip:'这顿外食从 D5 调到 D4；D5 滑雪后回住处自炊。按双方体力与餐厅营业时间安排，不等候至很晚。'}
+ };
+ const d5={...first,checkVersion:'pair-bodmi-v1',city:'格林德瓦德 · Bodmi',en:'BODMI / EASY MORNING',title:'Bodmi · 两人短时滑雪，不请私教',theme:'初学区体验与休息',kind:'可选滑雪日',featured:false,
+  focus:'一起体验，以伴侣体力与控速能力为准',pace:'约 1–2 小时雪上体验 · 随时结束',
+  drive:'至格林德瓦德约 30–45 分钟；村内接驳另留',points:['gsteigwiler','grindelwald'],photo:null,gallery:[],
+  route:'Gsteigwiler → 格林德瓦德 → Bodmi 初学区 → 原宿',meal:'村内午餐 · 回宿自炊',
+  highlights:['两人一起体验','不请私教 · 不含课程','下午回宿休息'],
+  intro:'在 Bodmi 对散客开放的平缓练习区短时体验。你以陪伴为主，伴侣累了即可结束；先确认区域和票种，未确认前不买大雪区日票。',
+  brochureIntro:'上午留给两人的雪上体验，约 1–2 小时含中途休息，不请私教、不安排全天赶雪道。伴侣零基础，以能舒适参与为目标；午餐后回住处休息。First 已移到 D4，原湖畔日由此替换。',
+  items:[['09:00–10:00','前往 Bodmi · 核对场地与租具','先确认当日有对散客开放、适合零基础的平缓区和适用票种，再取两套装备。Bodmi 停车有限；可停村内正规车场，乘 122／124 路约 15 分钟到达，另留候车时间。优先确认现场租具，减少穿雪靴搬运。'],['10:00–10:40','短时适应 · 不赶进度','只在现场允许的平缓区域活动；由门店适配雪鞋、固定器与头盔。你有经验不代表具备教学资质，不把陪伴当作教学保证；伴侣无法自主控速、停车和转弯时，不进入普通雪道或拖牵坡。'],['10:40–12:00','休息 · 愿意才继续','先脱离滑行区域休息。若状态良好，再体验一小段；怕冷、腿酸或紧张就一起结束。含休息共约 1–2 小时，不以滑满时长为目标，也不让伴侣独自等你去远处雪道。'],['12:00–14:00','还具 · 午餐 · 回宿休息','留足还具与换鞋时间，村内简单午餐后返回。下午不加上山或湖区打卡；用 Coop 已购食材做晚餐，并整理次日转场物品。']],
+  backup:[['练习区或票种不适用','不进入教学专用区，改村内休息','Bodmi 官网列有成人初学区，但未据此确认无课散客可用的全部区域；预先联系场地方核对。若无法确认可用的平缓区，取消滑雪，不转去 First 普通雪道。'],['疲劳、冰硬雪面或天气不好','提前结束，不追加项目','是否继续以伴侣感受为准。还具后回住宿或咖啡馆；短时使用不保证租具、票券可按小时退款。']],
+  tips:[
+   '这是两人体验的可选方案，不含私教或团体课费用，也不承诺零基础可在一天内独立滑雪。',
+   '仅使用场地方确认开放给散客的平缓练习区；魔毯用于滑雪还是雪橇、是否限定课程学员，购票前确认。',
+   '官网拖牵半日票 CHF23 不等于零基础区通票；练习区适用票先估 CHF25／人。不会控速停车前不上拖牵坡，不购买 First 大雪区日票凑行程。',
+   '租具先按 CHF80／人预留，即使只滑 1–2 小时也可能按日收费；两套均含雪板或单板、适配雪鞋与头盔的预算。衣物、手套与雪镜另备。',
+   '两人保险各预留 ¥100 升级差价，已有相应滑雪及救援保障时设为 0；此数额不是保险报价。',
+   '页面沿用 Gsteigwiler 连住。若以后改住施皮茨，需重新留出开车、停车和接驳时间；不因可以自驾就默认能停在练习区门口。'
+  ],
+  book:'出发前核对 Bodmi 开放状态、无课散客区域与票种，再确认取还装备、停车或公交。参考时段不是场地方营业承诺；没有预订任何课程、装备或门票。',
+  links:[['Bodmi 初学区与设施','https://www.outdoor.ch/en/bodmi-arena-grindelwald'],['官方租具与门店','https://www.outdoor.ch/en/outdoor-ski-school/ski-rental-in-interlaken-und-grindelwald']],
+  budgetFree:'村内公共区域散步不另列门票。Bodmi 练习区适用票、两套租具和接驳分别预留；First 已在 D4 计入，本日不重复购买。',
+  dinner:{...lake.dinner,title:'滑雪后回住处，用 Coop 食材做晚餐。',out:'若不想做饭，在格林德瓦德午餐后购买简单熟食，或按当天体力就近外食；费用相应调整。',buy:'D3 采购时预留 D5 的耐放食材；今天尽量消耗余量，明天换住 Randa。',tip:'餐饮预算同步改为 D4 外食、D5 自炊，Coop 食材按食用日计入，不重复加一笔购物费。'}
+ };
+ return {...p,summary:'First 与马特洪峰，加入两人 Bodmi 短时体验。',brochureLead:'D4 First 观景、D5 Bodmi 两人短时滑雪；不请私教，下午休息，保留采尔马特与马特洪峰。',tradeoff:p.tradeoff+' 两人滑雪方案会替换 D4 原湖畔日，First 提前至 D4。',
+  stages:p.stages.map((s,i)=>i===1?{...s,name:'格林德瓦德地区',focus:'First · Bodmi 两人体验',detail:'同一小镇连住 3 晚：D4 两人 First 观景，D5 上午短时滑雪、下午休息；替换原湖畔日。'}:s),
+  shoppingStops:p.shoppingStops.map((s,i)=>i===0?[s[0],s[1],'采购 D3、D5 两顿自炊与早餐；D4 First 观景后就近外食。']:s),
+  labels:p.labels.map((s,i)=>i===3?'First 观景':i===4?'Bodmi 两人体验':s),days:p.days.map(d=>d.id===3?{...d,dinner:{...d.dinner,cook:'入住后做一锅番茄意面，搭配鸡蛋和沙拉；耐放食材留给 D5 滑雪后自炊，D4 外食。'}}:d.id===4?d4:d.id===5?d5:d)};
+}
 function skiPlan(p){
  if(p.id!=='winter')return p;
  const mode=skiMode(),base=p.days[4],rest=mode==='rest';
+ if(mode==='pair')return pairSkiPlan(p);
  const common={...p,summary:'First＋采尔马特。安静小镇连住，First 可选一天自由滑雪。',stages:p.stages.map((s,i)=>i===1?{...s,detail:'小镇连住 3 晚：一天湖畔慢游，一天 First，观景或自由滑雪自选。'}:s)};
  if(mode==='none')return common;
  const d={...base,checkVersion:'optional-ski-'+mode+'-v1',title:rest?'First · 你自由滑雪，伴侣留宿休息':'First · 你自由滑雪，伴侣轻松观景',kind:'可选滑雪日',pace:'自由滑雪 1 天 · 途中休息',focus:'有经验者自由滑雪；伴侣按自己的节奏休息',
@@ -2123,16 +2219,16 @@ function skiSelectHTML(where){const mode=skiMode();return `<label class="ski-sel
 function skiOptionHTML(d){
  if(state.plan!=='winter'||d.id!==5)return '';
  const mode=skiMode(),b=normalizeBudget(state.budget);b.plans.winter.ski='none';const base=budgetModel('winter',b);
- const comparison=['rest','view'].map(id=>{const other=normalizeBudget(b);other.plans.winter.ski=id;const m=budgetModel('winter',other),delta=m.total-base.total;return `<span><strong>${id==='rest'?'伴侣留宿 · 更省力':'伴侣上山 · 需外出等待'}</strong>两人全程 ${yuan(m.total)}<small>比两人观景${delta>=0?'增加':'减少'} ${yuan(Math.abs(delta))} · 含预备金</small></span>`;}).join('');
- return `<section class="ski-option" aria-label="First 可选滑雪安排"><p class="eyebrow">OPTIONAL / WINTER DAY 05</p><h4>这一天，也可以滑雪。</h4><p>保留 10 天路线，仅替换本日安排。你已有经验，选 1 天自由滑雪；伴侣不滑雪。</p>${skiSelectHTML('day')}<div class="ski-comparison">${comparison}</div><p class="ski-current" aria-live="polite">当前：${SKI_LABELS[mode]}。${mode==='none'?'滑雪费未计入，仍按两人观景。':'已按 1 人雪票＋租具＋保险差价预留更新每日及总费用；观光票按伴侣是否上山计入。'}</p><small>价格可在总预算修改；自带装备或现有保险已覆盖时，把租具或保险差价设为 0。冬季可选，5–6 月路线不安排滑雪。</small></section>`;
+ const comparison=['pair','rest','view'].map(id=>{const other=normalizeBudget(b);other.plans.winter.ski=id;const m=budgetModel('winter',other),delta=m.total-base.total;return `<span><strong>${{pair:'两人短时体验 · 不请私教',rest:'1 人自由滑 · 伴侣留宿',view:'1 人自由滑 · 伴侣观景'}[id]}</strong>两人全程 ${yuan(m.total)}<small>比两人观景${delta>=0?'增加':'减少'} ${yuan(Math.abs(delta))} · 含预备金</small></span>`;}).join('');
+ return `<section class="ski-option" aria-label="冬季可选滑雪安排"><p class="eyebrow">OPTIONAL / WINTER DAY 05</p><h4>这一天，也可以一起滑雪。</h4><p>两人体验选 Bodmi，约 1–2 小时、不请私教；系统会把 First 移到 D4，替换原湖畔日。你单独自由滑则保留 D4 湖畔日，伴侣可留宿或缆车观景。</p>${skiSelectHTML('day')}<div class="ski-comparison">${comparison}</div><p class="ski-current" aria-live="polite">当前：${SKI_LABELS[mode]}。${mode==='none'?'滑雪费未计入，仍按 D4 湖畔、D5 两人 First 观景。':mode==='pair'?'已同步 D4 First、D5 Bodmi，计两套租具、两人练习区票费预留、接驳与保险差价；无课程费。Bodmi 散客适用区域与票种待确认。':'已按 1 人雪票＋租具＋保险差价更新每日及总费用；观光票按伴侣是否上山计入。'}</p><small>价格可在总预算修改；自带装备或现有保险已覆盖时，调整相应费用。1–2 月可选，5–6 月路线不安排滑雪。</small></section>`;
 }
-function skiBudgetHTML(){return state.plan==='winter'?`<div class="ski-budget-control">${skiSelectHTML('budget')}<p class="budget-small">选择会同步 D5 时间安排、观光票人数、雪票、租具、每日费用和打印版。滑雪者不另购 First 观光票；半价卡不用于折半雪票。默认租具 CHF80、保险升级差价 ¥100 为可修改估算。</p></div>`:'';}
-function skiPrintSummary(){return state.plan==='winter'?`<p><strong>冬季 D5 选择：</strong>${SKI_LABELS[skiMode()]}。${skiMode()==='none'?'未计滑雪费用。':'1 位滑雪者；雪票与租具不按半价卡打折，滑雪者不重复购买观光缆车票。'}</p>`:'';}
+function skiBudgetHTML(){return state.plan==='winter'?`<div class="ski-budget-control">${skiSelectHTML('budget')}<p class="budget-small">两人体验：D4 两人 First 观景、D5 Bodmi 短时滑雪，替换湖畔日；练习区票先估 CHF25／人、巴士 CHF10／人往返，散客适用票种与区域待确认，不买大雪区日票、不含课程。单人自由滑：按 1 人雪票，滑雪者不重复买当日观光票。两类均按租具 CHF80／人、保险差价 ¥100／人估算，可修改；半价卡不折半滑雪票或租具。</p></div>`:'';}
+function skiPrintSummary(){return state.plan==='winter'?`<p><strong>冬季可选安排：</strong>${SKI_LABELS[skiMode()]}。${skiMode()==='none'?'未计滑雪费用。':skiMode()==='pair'?'D4 两人 First 观景；D5 Bodmi 约 1–2 小时，两套租具、两人票费预留与接驳、保险差价，不含课程。替换湖畔日，不买 First 大雪区日票；无课散客可用区域和票种待确认。':'1 位滑雪者；雪票与租具不按半价卡打折，滑雪者不重复购买观光缆车票。'}</p>`:'';}
 document.addEventListener('change',e=>{
  if(!e.target.matches('[data-ski-mode]')||state.plan!=='winter')return;
  const origin=e.target.id;state.budget.plans.winter.ski=e.target.value;state.budget=normalizeBudget(state.budget);
  renderPlans();renderTabs();renderDay();renderMap();persist();
- $(origin)?.focus({preventScroll:true});notify('已同步 D5 安排与费用，未产生任何预订');
+ $(origin)?.focus({preventScroll:true});notify('已同步行程与费用，未产生任何预订');
 });
 
 renderPlans();renderDate();renderTabs();renderDay();renderMap();renderPrep();renderBookings();renderSources();renderPhotoCredits();setView(state.view,false);if(!storageOK)$('saveState').querySelector('span').textContent='请用保存副本保留记录';
